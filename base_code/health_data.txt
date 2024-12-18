@@ -1,8 +1,7 @@
 [Exercises] 
 Total calories burned: 0kcal
 [Diets] 
-salad - 70kcal
 
 [Total] 
 Basal metabolic rate - 1300kcal
-The remaining calories - -1230kcal
+The remaining calories - -1300kcal

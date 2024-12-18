@@ -120,5 +120,17 @@ void printHealthData(const HealthData* health_data) {
 		else printf("You have eaten more calories than planned today, but you have exercised too much!");
 
 	}
+	else
+	{
+		printf("Please exercise for your health!\n");
+		if(health_data->total_calories_intake>=DAILY_CALORIE_GOAL )
+		{
+			printf("Your total calorie intake for today has reached your goal!\n");
+		}
+		else if(health_data->total_calories_intake<DAILY_CALORIE_GOAL)
+		{
+			printf("Your total calorie intake for today has not reached your goal, remember to eat more!!\n");
+		}
+	}
 	 printf("=======================================================================\n");
 }
