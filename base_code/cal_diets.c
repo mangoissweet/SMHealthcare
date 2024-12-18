@@ -66,13 +66,21 @@ void inputDiet(HealthData* health_data) {
     
 	// ToCode: to enter the diet to be chosen with exit option
     printf("Choose exercise (1-7)\n");
-	scanf("%d",&choice);
- 	if(choice>=7||choice<1)
- 	{
- 		printf("[Error] Invalid option.");
- 		return;
- 		//back to [Healthcare Management Systems]
-	}
+	do{
+		scanf("%d",&choice);
+ 		if(choice>7||choice<1)
+ 		{
+ 			printf("[Error] Invalid option.\n");
+ 			printf("Please choose number between 1 to 7.\n");
+ 			//asking to select valid number
+		}
+		else if(choice==7)
+		{
+			return; //exit option
+		}
+		else break;
+	}while(1); //when valid number is selected
+	
 
     // ToCode: to enter the selected diet in the health data
     health_data->diet[health_data->diet_count]=diet_list[--choice]; 

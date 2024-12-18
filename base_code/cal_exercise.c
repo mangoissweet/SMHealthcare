@@ -73,12 +73,20 @@ void inputExercise(HealthData* health_data) {
     // ToCode: to enter the exercise to be chosen with exit option
 	printf("Choose exercise (1-7)\n");
 	scanf("%d",&choice);
- 	if(choice>7||choice<1)
- 	{
- 		printf("[Error] Invalid option.");
- 		return;
- 		//back to 'healthcare management systems
-	}
+ 	do{
+		scanf("%d",&choice);
+ 		if(choice>7||choice<1)
+ 		{
+ 			printf("[Error] Invalid option.\n");
+ 			printf("Please choose number between 1 to 7.\n");
+ 			//asking to select valid number
+		}
+		else if(choice==7)
+		{
+			return;//exit option
+		}
+		else break;//when valid number is selected
+	}while(1);
 	
     
     // To enter the duration of the exercise
