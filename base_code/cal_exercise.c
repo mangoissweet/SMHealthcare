@@ -17,6 +17,8 @@
 #define MAX_EXERCISE_NAME_LEN 50	// Maximum length of the name of exercise
 
 
+#define HEALTHFILEPATH "health_data.txt"
+
 // To declare the structure of the exercises
 static Exercise exercise_list[MAX_EXERCISES];
 int exercise_list_size = 0;
@@ -64,19 +66,29 @@ void inputExercise(HealthData* health_data) {
     printf("The list of exercises: \n");
     for(i=0;i<exercise_list_size;i++)
     {
-    	printf("%s - %dkcal\n",exercise_list[i].exercise_name, exercise_list[i].calories_burned_per_minute);
+    	printf("%d. %s - (%dkcal burned per min.)\n",i+1,exercise_list[i].exercise_name, exercise_list[i].calories_burned_per_minute);
 	}
-
+	printf("7. Exit\n");
+	
     // ToCode: to enter the exercise to be chosen with exit option
-	printf("Choose exercise=");
-	scanf("%s",&choice);
- 
+	printf("Choose exercise (1-7)\n");
+	scanf("%d",&choice);
+ 	if(choice>=7||choice<1)
+ 	{
+ 		printf("[Error] Invalid option.");
+ 		return;
+ 		//back to 'healthcare management systems
+	}
+	
     
     // To enter the duration of the exercise
     printf("Enter the duration of the exercise (in min.): ");
     scanf("%d", &duration);
 
     // ToCode: to enter the selected exercise and total calcories burned in the health data
-    
-
+    health_data->exercises[health_data->exercise_count]=exercise_list[--choice];
+    health_data->exercises[health_data->exercise_count].calories_burned_per_minute*=duration;
+    health_data->exercise_count++;
+    health_data->total_calories_burned+=exercise_list[choice].calories_burned_per_minute*duration;
+   
 }

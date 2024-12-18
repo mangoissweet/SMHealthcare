@@ -18,6 +18,8 @@
 #define DAILY_CALORIE_GOAL 2000  	// Recommended daily calorie intake for adult women
 #define BASAL_METABOLIC_RATE 1300 	// Basal metabolic rate of adult women
 
+
+
 void loadExercises(const char* EXERCISEFILEPATH);
 
 #endif /* cal_exercise_h */

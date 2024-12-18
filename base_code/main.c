@@ -49,15 +49,16 @@ int main() {
         switch (choice) {
             case 1:
             	inputExercise(&health_data);
+            	saveData(HEALTHFILEPATH,&health_data);
                 break;
                 
             case 2:
             	inputDiet(&health_data);
-            	
+            	saveData(HEALTHFILEPATH,&health_data);
                 break;
                 
             case 3:
-            	
+            	//fgets(,100,HEALTHFILEPATH)
                 break;
                 
             case 4:

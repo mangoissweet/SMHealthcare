@@ -60,17 +60,27 @@ void inputDiet(HealthData* health_data) {
     printf("The list of diets:\n");
     for(i=0;i<diet_list_size;i++)
     {
-    	printf("%s - %dkcal\n",diet_list[i].food_name, diet_list[i].calories_intake);
+    	printf("%d. %s (%dkcal)\n",i+1,diet_list[i].food_name, diet_list[i].calories_intake);
 	}
+	printf("7. Exit\n");
     
 	// ToCode: to enter the diet to be chosen with exit option
-    
+    printf("Choose exercise (1-7)\n");
+	scanf("%d",&choice);
+ 	if(choice>=7||choice<1)
+ 	{
+ 		printf("[Error] Invalid option.");
+ 		return;
+ 		//back to [Healthcare Management Systems]
+	}
 
     // ToCode: to enter the selected diet in the health data
-    
+    health_data->diet[health_data->diet_count]=diet_list[--choice]; 
+    health_data->diet_count++;
 
     // ToCode: to enter the total calories intake in the health data
-
+    health_data->total_calories_intake+=diet_list[choice].calories_intake;
+    
 
 }
 

@@ -14,6 +14,7 @@
 #include "cal_healthdata.h"
 
 
+
 /*
     description : enter the exercise and diet history in "health_data.txt" 
     input parameters : health_data - data object in which the selected exercise and diet is stored
@@ -34,17 +35,26 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
 
     // ToCode: to save the chosen exercise and total calories burned 
     fprintf(file, "[Exercises] \n");
-    
-    
+    for(i=0;i<health_data->exercise_count;i++)
+    {
+    	fprintf(file,"%s - %dkcal\n",health_data->exercises[i].exercise_name,health_data->exercises[i].calories_burned_per_minute);
+	}
+	fprintf(file, "Total calories burned: %dkcal",health_data->total_calories_burned);
+	
+	
     // ToCode: to save the chosen diet and total calories intake 
     fprintf(file, "\n[Diets] \n");
-
-
-
+	for(i=0;i<health_data->diet_count;i++)
+    {
+    	fprintf(file,"%s - %dkcal\n",health_data->diet[i].food_name,health_data->total_calories_intake);
+	}
+	
     // ToCode: to save the total remaining calrories
     fprintf(file, "\n[Total] \n");
+    fprintf(file,"Basal metabolic rate - 1300kcal\n");
+    fprintf(file,"The remaining calories - %dkcal\n",-1300-health_data->total_calories_burned+health_data->total_calories_intake);
     
-    
+    fclose(file);
 }
 
 /*
