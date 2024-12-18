@@ -58,7 +58,7 @@ int main() {
                 break;
                 
             case 3:
-            	//fgets(,100,HEALTHFILEPATH)
+            	printHealthData(&health_data);
                 break;
                 
             case 4:
