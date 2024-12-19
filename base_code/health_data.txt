@@ -1,7 +1,8 @@
 [Exercises] 
-Total calories burned: 0kcal
+riding - 15kcal
+Total calories burned: 15kcal
 [Diets] 
 
 [Total] 
 Basal metabolic rate - 1300kcal
-The remaining calories - -1300kcal
+The remaining calories - -1315kcal

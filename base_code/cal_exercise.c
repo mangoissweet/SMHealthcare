@@ -71,8 +71,7 @@ void inputExercise(HealthData* health_data) {
 	printf("7. Exit\n");
 	
     // ToCode: to enter the exercise to be chosen with exit option
-	printf("Choose exercise (1-7)\n");
-	scanf("%d",&choice);
+	printf("Choose exercise (1-7): \n");
  	do{
 		scanf("%d",&choice);
  		if(choice>7||choice<1)

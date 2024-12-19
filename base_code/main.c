@@ -72,7 +72,7 @@ int main() {
                 printf("[Error] Invalid option. \n");
                 printf("Please try again! \n");
         }
-    } while (1 ); //ToCode: not 1 FIXTHIS!!
+    } while (1);
 
     return 0;
 }
